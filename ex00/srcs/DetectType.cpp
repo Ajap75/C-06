@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 11:59:34 by anastruc          #+#    #+#             */
-/*   Updated: 2025/03/24 13:04:52 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:16:20 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ type detectType(std::string &string_representation)
     else if (isFloat(string_representation))
         return(FLOAT);
     else if (isDouble(string_representation))
-        return(FLOAT);
+        return(DOUBLE);
     else if (isSpecialCases(string_representation))
         return (SPECIAL_CASES);
     return (ERROR);
