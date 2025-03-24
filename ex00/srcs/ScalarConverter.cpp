@@ -6,60 +6,48 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:09:02 by anastruc          #+#    #+#             */
-/*   Updated: 2025/03/19 17:18:48 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/03/24 13:13:16 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ScalarConverter.hpp"
+#include "../headers/Type.hpp"
 #include <iostream>
 #include <sstream>
+#include <string>
+#include "../headers/DetectType.hpp"
+#include "../headers/HandleType.hpp"
 
 void ScalarConverter::convert(std::string &string_representation)
 {
-    std::stringstream ss(string_representation);
-    char chr;
-    int num;
-    float flt;
-    double dbl;
+    if (string_representation.empty())
+    {
+        std::cout << "ERROR ENTRY\n";
+        return ;
+    }
+    switch (detectType(string_representation))
+    {
+        case(CHAR):
+            handleChar(string_representation);
+            break;
 
-    ss >> chr;
-    if (ss.fail())
-    {
-        std::cout << "impossible" << std::endl;
-    }
-    else
-        std::cout << "char: " << chr << std::endl;
-        
-    ss.clear();
-    ss.str(string_representation);
-    ss >> num;
-    if (ss.fail())
-    {
-        std::cout << "impossible" << std::endl;
-    }
-    else
-        std::cout << "int: " << num << std::endl;
-    
-    ss.clear();
-    ss.str(string_representation);
+        case(INT):
+            handleInt(string_representation);
+            break;
+            
+        case(DOUBLE):
+            handleDouble(string_representation);
+            break;
+            
+        case(FLOAT):
+            handleFloat(string_representation);
+            break;
 
-    ss >> flt;
-    if (ss.fail())
-    {
-        std::cout << "impossible" << std::endl;
+        case(SPECIAL_CASES):
+            handleSpecialCases(string_representation);
+            break;
+        case(ERROR):
+            std::cout << "ERROR ENTRY\n";
     }
-    else
-        std::cout << "float: " << flt << std::endl;
-    
-    ss.clear();
-    ss.str(string_representation);
-
-    ss >> dbl;
-    if (ss.fail())
-    {
-        std::cout << "impossible" << std::endl;
-    }
-    else
-        std::cout << "double: " << dbl << std::endl;
-    
 }
+

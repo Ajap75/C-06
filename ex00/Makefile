@@ -6,7 +6,7 @@
 #    By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/07 12:53:29 by anastruc          #+#    #+#              #
-#    Updated: 2025/03/19 16:39:55 by anastruc         ###   ########.fr        #
+#    Updated: 2025/03/24 13:07:27 by anastruc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,20 @@ PINK = \033[1;35m
 BLUE = \033[1;36m
 NC = \033[0m
 
-HEADER = ScalarConverter.cpp \
+HEADER = ScalarConverter.hpp \
  Colors.hpp \
+ Type.hpp \
+ HandleType.hpp \
+DetectType.hpp \
+
+
+ 
 
 SRCS = ScalarConverter.cpp \
-
+ DetectType.cpp \
+ DetectType_support.cpp \
+ HandleType.cpp \
+ main.cpp
 
 PSRCS = $(addprefix srcs/, $(SRCS))
 

@@ -1,9 +1,10 @@
 #include "../headers/ScalarConverter.hpp"
 
 
-int main ()
-{
-std::string literal_representation = "0";
-
-ScalarConverter::convert(literal_representation);
+int main (int argc, char **argv)
+{ 
+    std::string string;
+    string = argv[1];
+    if (argc >= 2)
+        ScalarConverter::convert(string);
 }
