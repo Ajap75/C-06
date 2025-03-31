@@ -6,7 +6,7 @@
 /*   By: anastruc <anastruc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:01:27 by anastruc          #+#    #+#             */
-/*   Updated: 2025/03/24 16:00:57 by anastruc         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:49:15 by anastruc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void   handleSpecialCases(std::string &string_representation)
 void    printOutput(char c, int i, float f, double d)
 {
     if (i < 0 || i > 127)
-        std::cout << "char: impossible" << std::endl;
+        std::cout << "char: Non displayable" << std::endl;
     else if (!isprint(c))
-        std::cout << "char: impossible" <<std::endl;
+        std::cout << "char: Non displayable" <<std::endl;
     else    
         std::cout << "char: " << "'" << c << "'" << std::endl;
         
